@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,17 +14,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [HomeController::class,'dashboard'])->name('dashboard');
+Route::get('/login', [HomeController::class,'login'])->name('login');
+Route::get('/register', [HomeController::class,'register'])->name('register');
+Route::post('/register', [UserController::class,'registerUser'])->name('registerUser');
+Route::post('/login', [UserController::class,'loginUser'])->name('loginUser');
 
-Route::get('/', function () {
-    return view('dashboard');
-});
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/posts', function () {
-    return view('posts');
-});
+// Route::get('/posts', function () {
+//     return view('posts');
+// });
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // });
