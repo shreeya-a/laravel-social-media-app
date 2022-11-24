@@ -58,17 +58,18 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
+    // yo chai default wala
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        // yo chai pahila comment gareko thiyo pachi uncomment gareko
+        'users' => [
+            'driver' => 'database',
+            'table' => 'users',
+        ],
     ],
 
     /*
