@@ -22,9 +22,9 @@
           <a class="nav-link " href="{{route('dashboard')}}">Dashboard</a>
         </li>
         
-@auth
+<!-- @auth
 <a  href="{{route('login')}}" class="p-2 nav-link">{{auth()->user()->name}}</a>
-<a class="nav-link btn btn-danger text-white" href="{{route('login')}}">Logout</a>
+<a class="nav-link btn btn-danger text-white" href="{{route('logout')}}">Logout</a>
 
  
 @endauth
@@ -35,8 +35,17 @@
         <li class="nav-item">
           <a class="nav-link" href="{{route('register')}}">Register</a>
         </li>
-@endguest
-          
+@endguest -->
+@auth
+        <a href="#" class="p-2 nav-link">{{auth()->user()->name}}</a>
+        <a class="nav-link btn btn-outline-info" href="{{route('logout')}}">Logout</a>
+        @endauth
+
+        @guest
+        <li class="nav-item">
+          <a class="p-2 nav-link" href="{{route('login')}}">Login</a>
+        </li>
+        @endguest
     </div>
   </div>
 </nav>

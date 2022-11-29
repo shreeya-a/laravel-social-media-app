@@ -10,4 +10,9 @@ class User extends Model
     use HasFactory;
     //fillable ma db ko title ko naam hunu parcha
     protected $fillable= ['name','email','password'];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);    
+    }
 }

@@ -52,15 +52,7 @@
                   </div>
                   @enderror
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                  <input type="password" class="form-control @error('confirm-password') is-invalid @enderror" name="confirm-password" id="exampleInputPassword1" placeholder="Re-enter Password">
-                  @error('confirm-password')
-                  <div class="invalid-feedback">
-                    {{$message}}
-                  </div>
-                  @enderror
-                </div>
+          
 
                 <div class=" d-grid gap-2 col-6 mx-auto">
                   <button type="submit" class="btn btn-primary">Submit</button>

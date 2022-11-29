@@ -20,7 +20,7 @@ class UserController extends Controller
           $req->validate([
             'name' =>'required',
             'email' =>'required|email|unique:users',
-            'password' =>'required|min:8',
+            'password' =>'required|',
             're-password' =>'required|same:password',
 
         ]);
@@ -46,7 +46,6 @@ class UserController extends Controller
         $req->validate([
             'email' =>'required|email',
             'password' =>'required',
-            'confirm-password' =>'required|same:password',
         ]);
 
         // only() le jun data chahiyeko tyo matra data liyera aau 
