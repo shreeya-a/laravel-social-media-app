@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Models\Post;
 use GuzzleHttp\Middleware;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +28,12 @@ Route::get('/register', [HomeController::class,'register'])->name('register');
 Route::post('/register', [UserController::class,'registerUser'])->name('registerUser');
 Route::post('/login', [UserController::class,'loginUser'])->name('loginUser');
 Route::get('/logout', [UserController::class,'logout'])->name('logout');
+
+Route::post('/new-post', [PostController::class,'addPost'])->name('newPost');
+Route::get('/edit/{id}', [PostController::class,'edit'])->name('edit');
+Route::get('/delete/{id}', [PostController::class,'deletePost'])->name('deletePost');
+Route::post('/edit-post', [PostController::class,'editPost'])->name('editPost');
+
 
 
 // Route::get('/posts', function () {

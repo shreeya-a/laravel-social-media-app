@@ -12,18 +12,24 @@ class HomeController extends Controller
     {
         return view('login');
     }
-    
+
     public  function dashboard()
     {
         $posts =Post::all();
-        // dd($posts);
-        return view('dashboard', compact('posts'));
 
+        // $posts = Post::where('user_id', '=', auth()->user()->id)->get();
+        // select * from posts where user_id = 1;
+
+        // dd($posts);
+
+        // Post::create([
+        //     'title' => 'test',
+        // 'user_id' => auth()->user()->id,
+        // ]);
+        return view('dashboard', compact('posts'));
     }
     public  function register()
     {
         return view('register');
-
     }
-    
 }
